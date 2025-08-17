@@ -35,8 +35,6 @@ class PlanningModule:
                       not self.kb.fact_exists("AllWumpusesKilled"), adj_x, adj_y):
                     adjacent_to_danger = True
                     break
-                    adjacent_to_danger = True
-                    break
             
             if adjacent_to_danger:
                 risk += 100.0
