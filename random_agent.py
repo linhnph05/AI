@@ -1,10 +1,11 @@
 import random
-from const import DIRECTIONS, DX, DY
 
 class RandomAgent:
     
-    def __init__(self, N):
+    def __init__(self, N, K=2):
         self.N = N
+        self.K = K  # Number of wumpuses
+        self.wumpuses_killed = 0  # Track killed wumpuses
         self.shoot = False
         self.has_gold = False
         
@@ -30,6 +31,10 @@ class RandomAgent:
         
         self.update_position(x, y, direction)
         self.last_percepts = percept
+        
+        if percept.get("scream"):
+            self.wumpuses_killed += 1
+            print(f"Random Agent: Wumpus killed! Total wumpuses killed: {self.wumpuses_killed}/{self.K}")
     
     def grab_gold_action(self):
         x, y = self.current_x, self.current_y

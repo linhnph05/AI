@@ -1,4 +1,4 @@
-from const import DIRECTIONS, DX, DY
+from const import DX, DY
 
 class InferenceEngine:
     def __init__(self, knowledge_base):
@@ -144,6 +144,16 @@ class InferenceEngine:
                 break
             x += dx
             y += dy
+
+    def handle_all_wumpuses_killed(self):
+        for y in range(self.kb.N):
+            for x in range(self.kb.N):
+                if (self.kb.fact_exists("PossibleWumpus", x, y) or 
+                    self.kb.fact_exists("Wumpus", x, y)):
+                    self.kb.remove_fact("PossibleWumpus", x, y)
+                    self.kb.remove_fact("Wumpus", x, y)
+                    self.kb.add_fact("SafeWumpus", x, y)
+                    self.kb.add_fact("Safe", x, y)
 
     def logic_inference_forward_chaining(self):
         while True:

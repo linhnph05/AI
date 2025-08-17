@@ -20,7 +20,7 @@ def get_user_configuration():
 
 def run_autonomous_mode(env, agent, agent_type="Intelligent"):
     step_count = 0
-    max_steps = 200
+    max_steps = 300
     print(f"Starting {agent_type.lower()} agent!")
 
     while step_count < max_steps:
@@ -109,7 +109,7 @@ def run_comparison_experiment(N, K, p, num_trials=10):
         
         print(f"Testing Intelligent Agent...")
         env_intelligent = Environment(N=N, K=K, p=p)
-        agent_intelligent = Agent(N)
+        agent_intelligent = Agent(N, K)
         score_i, steps_i, has_gold_i, climbed_i = run_autonomous_mode(env_intelligent, agent_intelligent, "Intelligent")
         intelligent_results.append({
             'score': score_i,
@@ -123,7 +123,7 @@ def run_comparison_experiment(N, K, p, num_trials=10):
         
         print(f"Testing Random Agent...")
         env_random = Environment(N=N, K=K, p=p)
-        agent_random = RandomAgent(N)
+        agent_random = RandomAgent(N, K)
         score_r, steps_r, has_gold_r, climbed_r = run_autonomous_mode(env_random, agent_random, "Random")
         random_results.append({
             'score': score_r,
@@ -161,10 +161,10 @@ def run_comparison_experiment(N, K, p, num_trials=10):
     
     return intelligent_results, random_results
 
-def run_moving_wumpus_mode(env, agent, agent_type="Intelligent"):
+def run_moving_wumpus_mode(env, agent):
     step_count = 0
     max_steps = 300
-    print(f"Starting {agent_type.lower()} agent in Moving Wumpus mode!")
+    print(f"Starting Adaptive agent in Moving Wumpus mode!")
     print("WARNING: Wumpuses move every 5 actions - previous knowledge may become outdated!")
 
     while step_count < max_steps:
@@ -180,15 +180,12 @@ def run_moving_wumpus_mode(env, agent, agent_type="Intelligent"):
         
         wumpus_moved = agent.handle_wumpus_movement_phase(env.action_count)
         
-        print(f"\n{agent_type} Agent's Knowledge:")
+        print(f"\nAdaptive Agent's Knowledge:")
         agent.print_agent_map(env.N, env.N, env.agent_x, env.agent_y)
         
-        current_score = agent.currentScore()
-        actions_until_wumpus_move = 5 - (env.action_count % 5)
-        print(f"\nScore: {current_score} | Gold: {'Yes' if agent.has_gold else 'No'} | Actions until Wumpus move: {actions_until_wumpus_move}")
 
         action = agent.choose_action()
-        print(f"\n{agent_type} Agent chooses action: {action}")
+        print(f"\nAdaptive Agent chooses action: {action}")
         
         agent_died = False
         
@@ -264,7 +261,7 @@ def run_moving_wumpus_mode(env, agent, agent_type="Intelligent"):
         time.sleep(0.7)
 
     current_score = agent.currentScore()
-    print(f"-{agent_type.upper()} Agent - Moving Wumpus Mode:")
+    print(f"-Adaptive Agent - Moving Wumpus Mode:")
     print(f"+Total Steps: {step_count}")
     print(f"+Total Actions: {env.action_count}")
     print(f"+Wumpus Movements: {env.action_count // 5}")
@@ -287,7 +284,7 @@ def run_moving_wumpus_mode(env, agent, agent_type="Intelligent"):
     else:
         print(f"\nMOVING WUMPUS CHALLENGE ANALYSIS:\n+ No Wumpus movements occurred (game ended before 5 actions)")
     
-    return current_score, step_count, agent.has_gold, (env.agent_x == 0 and env.agent_y == 0)
+    return 
 
 if __name__ == "__main__":
     N, K, p, mode = get_user_configuration()
@@ -299,48 +296,21 @@ if __name__ == "__main__":
     if mode == '1':
         print(f"Mode: Intelligent Agent")
         env = Environment(N=N, K=K, p=p) 
-        agent = Agent(N)
-        current_score, steps, has_gold, climbed = run_autonomous_mode(env, agent, "Intelligent")
-        efficiency_analysis = f"{len(agent.kb.visited)}/{env.N * env.N} cells explored"
-        risk_mgmt_analysis = 'Excellent' if current_score > 500 else 'Good' if current_score > 0 else 'Needs Improvement'
-        planning_effectiveness = 'Optimal' if agent.has_gold else 'Suboptimal'
-        
-        print(f"\nIntelligent Agent Performance Analysis:\nEfficiency: {efficiency_analysis}\nRisk Management: {risk_mgmt_analysis}\nPlanning Effectiveness: {planning_effectiveness}")
+        agent = Agent(N, K)
+        run_autonomous_mode(env, agent, "Intelligent")
     elif mode == '2':
         print(f"Mode: Random Agent Baseline")
         env = Environment(N=N, K=K, p=p) 
-        agent = RandomAgent(N)
-        current_score, steps, has_gold, climbed = run_autonomous_mode(env, agent, "Random")
-        efficiency_analysis = f"{len(agent.visited)}/{env.N * env.N} cells explored"
-        risk_mgmt_analysis = 'Poor - Random decisions' if current_score < 0 else 'Lucky!'
-        
-        print(f"\nRandom Agent Performance Analysis:\nEfficiency: {efficiency_analysis}\nRisk Management: {risk_mgmt_analysis}\nPlanning Effectiveness: None - Pure randomness")
+        agent = RandomAgent(N, K)
+        run_autonomous_mode(env, agent, "Random")
     elif mode == '3':
         print(f"Mode: Agent Comparison Experiment")
         num_trials = int(input("Enter number of trials per agent (default 5): ") or 5)
         run_comparison_experiment(N, K, p, num_trials)
     elif mode == '4':
         print(f"Mode: Moving Wumpus Mode")
-        agent_choice = input("Choose agent type (1=Adaptive Agent, 2=Standard Agent, default Adaptive): ") or "1"
-        
-        if agent_choice == '1':
-            env = MovingWumpusEnvironment(N=N, K=K, p=p)
-            agent = AdaptiveAgent(N)
-            current_score, steps, has_gold, climbed = run_moving_wumpus_mode(env, agent, "Adaptive")
-            adaptability_status = 'Excellent' if current_score > 0 else 'Good' if current_score > -500 else 'Needs Improvement'
-            dynamic_planning = 'Effective' if has_gold else 'Challenged by moving threats'
-            survival_status = 'Success' if current_score > -1000 else 'Failed - killed by Wumpus'
-            knowledge_mgmt = 'Effective' if len(agent.outdated_wumpus_knowledge) < 5 else 'Struggled with uncertainty'
-            
-            print(f"\nAdaptive Agent in Moving Wumpus Environment:\n+ Adaptability: {adaptability_status}\n+ Dynamic Planning: {dynamic_planning}\n+ Survival: {survival_status}\n+ Movement Adaptation: {agent.movement_phases} wumpus movement phases handled\n+ Knowledge Management: {knowledge_mgmt}")
-        elif agent_choice == '2':
-            env = MovingWumpusEnvironment(N=N, K=K, p=p)
-            agent = Agent(N)
-            current_score, steps, has_gold, climbed = run_moving_wumpus_mode(env, agent, "Standard")
-            survival_status = 'Success' if current_score > -1000 else 'Failed - killed by Wumpus'
-            
-            print(f"\nStandard Agent in Moving Wumpus Environment:\n+ Adaptability: Limited - no dynamic knowledge management\n+ Dynamic Planning: Basic - may struggle with moving threats\n+ Survival: {survival_status}")
-        else:
-            print("Invalid agent choice.")
+        env = MovingWumpusEnvironment(N=N, K=K, p=p)
+        agent = AdaptiveAgent(N, K)
+        run_moving_wumpus_mode(env, agent)
     else:
         print("Invalid mode selected.")

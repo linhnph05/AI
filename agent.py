@@ -5,8 +5,10 @@ from inference_engine import InferenceEngine
 from planning_module import PlanningModule
 
 class Agent:
-    def __init__(self, N):
+    def __init__(self, N, K=2):
         self.N = N
+        self.K = K  # Number of wumpuses
+        self.wumpuses_killed = 0  # Track killed wumpuses
         self.shoot = False
         self.has_gold = False  
 
@@ -56,6 +58,14 @@ class Agent:
 
         if percept.get("scream"):
             self.kb.add_fact("Scream", x, y)
+            self.wumpuses_killed += 1
+            print(f"Wumpus killed! Total wumpuses killed: {self.wumpuses_killed}/{self.K}")
+            
+            if self.wumpuses_killed >= self.K:
+                print("All wumpuses have been killed! No more wumpus threats.")
+                self.kb.add_fact("AllWumpusesKilled")
+                self.inference_engine.handle_all_wumpuses_killed()
+            
             self.inference_engine.handle_shoot(x, y, direction)
 
         if percept.get("bump"):

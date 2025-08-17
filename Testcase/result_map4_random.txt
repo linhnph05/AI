@@ -1,0 +1,47 @@
+Enter map size N (recommended 4-10, default 8): Enter number of wumpuses K (recommended 1-4, default 2): Enter pit density (0.0-0.5, recommended 0.1-0.2, default 0.2): Choose mode (1=Intelligent Agent, 2=Random Agent, 3=Compare Agents, 4=Moving Wumpus Mode, default 1): Map Size: 8x8
+Wumpuses: 2
+Pit Density: 0.2
+Mode: Random Agent Baseline
+Starting random agent!
+
+-Step 1
+Real Environment:
+P  .  .  .  .  W  .  .  
+P  P  .  W  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  P  P  P  .  .  .  
+.  .  P  .  .  P  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  P  .  .  
+A  P  G  P  .  .  P  .  
+Agent at (0,0), facing E
+
+Random Agent's Knowledge:
+Random Agent Map (V=Visited, A=Agent, .=Unknown):
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ A  .  .  .  .  .  .  . 
+Visited: 1 cells
+
+Current Score: 0 | Gold: No
+Random agent chooses: CLIMB
+
+Random Agent chooses action: CLIMB
+You climbed out but you don't have the gold!
+FINAL SCORE: 0
+- Random agent:
++ Total Steps: 1
++ Final Score: 0
++ Gold Retrieved: No
++ Mission Status: INCOMPLETE
+
+Scoring:
++ Grab Gold: +0  
++ Shoot Arrow: -0
++ Climb Out (with gold): -0
++ Die: -0

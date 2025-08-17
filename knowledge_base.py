@@ -1,4 +1,4 @@
-from const import DIRECTIONS, DX, DY
+from const import DX, DY
 
 class KnowledgeBase:
     def __init__(self, N):

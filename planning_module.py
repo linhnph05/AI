@@ -1,8 +1,6 @@
 import heapq
 from const import DIRECTIONS, DX, DY
 from typing import List, Tuple, Optional, Set
-import math
-
 class PlanningModule:
     def __init__(self, knowledge_base, N):
         self.kb = knowledge_base
@@ -20,14 +18,23 @@ class PlanningModule:
         risk = 0.0
         if self.kb.fact_exists("PossiblePit", x, y):
             return 1000.0
+        
         if self.kb.fact_exists("PossibleWumpus", x, y):
-            return 800.0
+            if self.kb.fact_exists("AllWumpusesKilled", x, y):
+                risk += 0.0
+            else:
+                return 800.0
             
         if not self.kb.fact_exists("Safe", x, y) and (x, y) not in self.kb.visited:
             adjacent_to_danger = False
             for adj_x, adj_y in self.kb.get_adjacent(x, y):
-                if (self.kb.fact_exists("Breeze", adj_x, adj_y) or 
-                    self.kb.fact_exists("Stench", adj_x, adj_y)):
+                if self.kb.fact_exists("Breeze", adj_x, adj_y):
+                    adjacent_to_danger = True
+                    break
+                elif (self.kb.fact_exists("Stench", adj_x, adj_y) and 
+                      not self.kb.fact_exists("AllWumpusesKilled"), adj_x, adj_y):
+                    adjacent_to_danger = True
+                    break
                     adjacent_to_danger = True
                     break
             
@@ -221,7 +228,7 @@ class PlanningModule:
         if not has_gold and self.kb.fact_exists("glitter", agent_x, agent_y):
             return "GRAB"
         
-        if not has_shot:
+        if not has_shot and not self.kb.fact_exists("AllWumpusesKilled", agent_x, agent_y):
             dx, dy = DX[agent_dir], DY[agent_dir]
             x, y = agent_x + dx, agent_y + dy
             while 0 <= x < self.N and 0 <= y < self.N:

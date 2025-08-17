@@ -1,0 +1,3145 @@
+Enter map size N (recommended 4-10, default 8): Enter number of wumpuses K (recommended 1-4, default 2): Enter pit density (0.0-0.5, recommended 0.1-0.2, default 0.2): Choose mode (1=Intelligent Agent, 2=Random Agent, 3=Compare Agents, 4=Moving Wumpus Mode, default 1): Map Size: 8x8
+Wumpuses: 2
+Pit Density: 0.2
+Mode: Moving Wumpus Mode
+- Moving Wumpus Environment Initialized:
++ Wumpuses move every 5 agent actions
++ Current Wumpus locations: [(4, 2), (7, 7)]
+- Adaptive Agent initialized for Moving Wumpus environment
++ Enhanced knowledge management for dynamic threats
++ Increased caution and safety margins
++ Continuous belief updating capabilities
+Starting Adaptive agent in Moving Wumpus mode!
+WARNING: Wumpuses move every 5 actions - previous knowledge may become outdated!
+
+--- Step 1 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+A  .  .  .  P  .  P  P  
+Agent at (0,0), facing E
+Actions: 0 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+S  .  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 1, Uncertain: 0, Movements: 0
+Adjacent: N:Safe | E:Safe
+Movement phases: 0 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 1
+Turned left
+
+--- Step 2 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+A  .  .  .  P  .  P  P  
+Agent at (0,0), facing N
+Actions: 1 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+S  .  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 1, Uncertain: 0, Movements: 0
+Adjacent: N:Safe | E:Safe
+Movement phases: 0 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 2
+
+--- Step 3 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+A  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,1), facing N
+Actions: 2 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+S  .  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 2, Uncertain: 0, Movements: 0
+Adjacent: N:Safe | E:Safe | S:Safe
+Movement phases: 0 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 3
+
+--- Step 4 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+A  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,2), facing N
+Actions: 3 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+S  .  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 3, Uncertain: 0, Movements: 0
+Adjacent: N:Safe | E:Safe | S:Safe
+Movement phases: 0 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 4
+
+--- Step 5 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+A  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,3), facing N
+Actions: 4 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+S  .  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 4, Uncertain: 0, Movements: 0
+Adjacent: N:Safe | E:Safe | S:Safe
+Movement phases: 0 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 5
+
+WUMPUS MOVEMENT PHASE (after 5 actions)
+   Wumpus moved from (4,2) to (4,1)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(4, 1), (7, 7)]
+Re-running inference after Wumpus movement...
+
+--- Step 6 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+A  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,4), facing N
+Actions: 5 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(4, 1), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #1
+Marked 0 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+S  .  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 5, Uncertain: 0, Movements: 1
+Adjacent: N:Safe | E:Safe | S:Safe
+Movement phases: 1 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 6
+
+--- Step 7 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+A  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,5), facing N
+Actions: 6 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(4, 1), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+.  .  .  .  .  .  .  .  
+S  .  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 6, Uncertain: 0, Movements: 1
+Adjacent: N:Safe | E:Safe | S:Safe
+Movement phases: 1 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 7
+
+--- Step 8 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+A  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,6), facing N
+Actions: 7 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(4, 1), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  .  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 7, Uncertain: 0, Movements: 1
+Adjacent: N:Safe | E:Safe | S:Safe
+Movement phases: 1 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 8
+
+--- Step 9 ---
+Real Environment:
+A  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,7), facing N
+Actions: 8 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(4, 1), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+A  P  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 8, Uncertain: 0, Movements: 1
+Adjacent: E:Unknown | S:Safe
+Movement phases: 1 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 9
+Turned right
+
+--- Step 10 ---
+Real Environment:
+A  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,7), facing E
+Actions: 9 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(4, 1), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+A  P  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 8, Uncertain: 0, Movements: 1
+Adjacent: E:Unknown | S:Safe
+Movement phases: 1 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 10
+
+WUMPUS MOVEMENT PHASE (after 10 actions)
+   Wumpus moved from (4,1) to (4,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(4, 2), (7, 7)]
+Turned right
+Re-running inference after Wumpus movement...
+
+--- Step 11 ---
+Real Environment:
+A  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,7), facing S
+Actions: 10 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(4, 2), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #2
+Marked 0 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+A  P  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 8, Uncertain: 0, Movements: 2
+Adjacent: E:Unknown | S:Safe
+Movement phases: 2 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 11
+
+--- Step 12 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+A  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,6), facing S
+Actions: 11 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 8, Uncertain: 0, Movements: 2
+Adjacent: N:Safe | E:Safe | S:Safe
+Movement phases: 2 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 12
+Turned left
+
+--- Step 13 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+A  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (0,6), facing E
+Actions: 12 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+A  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 8, Uncertain: 0, Movements: 2
+Adjacent: N:Safe | E:Safe | S:Safe
+Movement phases: 2 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 13
+
+--- Step 14 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  A  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,6), facing E
+Actions: 13 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  A  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 9, Uncertain: 0, Movements: 2
+Adjacent: N:Unknown | E:?Pit | S:Safe | W:Safe
+Movement phases: 2 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 14
+Turned right
+
+--- Step 15 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  A  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,6), facing S
+Actions: 14 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  A  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 9, Uncertain: 0, Movements: 2
+Adjacent: N:Unknown | E:?Pit | S:Safe | W:Safe
+Movement phases: 2 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 15
+
+WUMPUS MOVEMENT PHASE (after 15 actions)
+   Wumpus moved from (4,2) to (4,3)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(4, 3), (7, 7)]
+Re-running inference after Wumpus movement...
+
+--- Step 16 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  A  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,5), facing S
+Actions: 15 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(4, 3), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #3
+Marked 0 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  A  S  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 10, Uncertain: 0, Movements: 3
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 3 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 16
+Turned left
+
+--- Step 17 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  A  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,5), facing E
+Actions: 16 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(4, 3), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  A  S  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 10, Uncertain: 0, Movements: 3
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 3 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 17
+
+--- Step 18 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  A  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,5), facing E
+Actions: 17 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(4, 3), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  A  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 11, Uncertain: 0, Movements: 3
+Adjacent: N:?Pit | E:?Pit | S:?Pit | W:Safe
+Movement phases: 3 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 18
+Turned right
+
+--- Step 19 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  A  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,5), facing S
+Actions: 18 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(4, 3), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  A  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 11, Uncertain: 0, Movements: 3
+Adjacent: N:?Pit | E:?Pit | S:?Pit | W:Safe
+Movement phases: 3 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 19
+Turned right
+
+--- Step 20 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  A  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,5), facing W
+Actions: 19 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(4, 3), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  A  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 11, Uncertain: 0, Movements: 3
+Adjacent: N:?Pit | E:?Pit | S:?Pit | W:Safe
+Movement phases: 3 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 20
+
+WUMPUS MOVEMENT PHASE (after 20 actions)
+   Wumpus moved from (4,3) to (4,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(4, 2), (7, 7)]
+Re-running inference after Wumpus movement...
+
+--- Step 21 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  A  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,5), facing W
+Actions: 20 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(4, 2), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #4
+Marked 0 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  A  S  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 11, Uncertain: 0, Movements: 4
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 4 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 21
+Turned left
+
+--- Step 22 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  A  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,5), facing S
+Actions: 21 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  A  S  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 11, Uncertain: 0, Movements: 4
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 4 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 22
+
+--- Step 23 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  A  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,4), facing S
+Actions: 22 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  A  P  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 12, Uncertain: 0, Movements: 4
+Adjacent: N:Safe | E:Unknown | S:Safe | W:Safe
+Movement phases: 4 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 23
+
+--- Step 24 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  A  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,3), facing S
+Actions: 23 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  A  S  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 13, Uncertain: 0, Movements: 4
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 4 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 24
+Turned left
+
+--- Step 25 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  A  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,3), facing E
+Actions: 24 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  A  S  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 13, Uncertain: 0, Movements: 4
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 4 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 25
+
+WUMPUS MOVEMENT PHASE (after 25 actions)
+   Wumpus moved from (4,2) to (3,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(3, 2), (7, 7)]
+Re-running inference after Wumpus movement...
+
+--- Step 26 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  A  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,3), facing E
+Actions: 25 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(3, 2), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #5
+Marked 0 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  S  A  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 14, Uncertain: 0, Movements: 5
+Adjacent: N:Unknown | E:?Pit | S:?Pit | W:Safe
+Movement phases: 5 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 26
+Turned right
+
+--- Step 27 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  A  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,3), facing S
+Actions: 26 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  S  A  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 14, Uncertain: 0, Movements: 5
+Adjacent: N:Unknown | E:?Pit | S:?Pit | W:Safe
+Movement phases: 5 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 27
+Turned right
+
+--- Step 28 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  A  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,3), facing W
+Actions: 27 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  S  A  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 14, Uncertain: 0, Movements: 5
+Adjacent: N:Unknown | E:?Pit | S:?Pit | W:Safe
+Movement phases: 5 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 28
+
+--- Step 29 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  A  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,3), facing W
+Actions: 28 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  A  S  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 14, Uncertain: 0, Movements: 5
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 5 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 29
+Turned left
+
+--- Step 30 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  A  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,3), facing S
+Actions: 29 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  A  S  p  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 14, Uncertain: 0, Movements: 5
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 5 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 30
+
+WUMPUS MOVEMENT PHASE (after 30 actions)
+   Wumpus moved from (3,2) to (4,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(4, 2), (7, 7)]
+Re-running inference after Wumpus movement...
+
+--- Step 31 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  A  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,2), facing S
+Actions: 30 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(4, 2), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #6
+Marked 0 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  A  S  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 15, Uncertain: 0, Movements: 6
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 6 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 31
+Turned left
+
+--- Step 32 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  A  .  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (1,2), facing E
+Actions: 31 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  A  S  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 15, Uncertain: 0, Movements: 6
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 6 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 32
+
+--- Step 33 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  .  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,2), facing E
+Actions: 32 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 16, Uncertain: 0, Movements: 6
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 6 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 33
+
+--- Step 34 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  A  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (3,2), facing E
+Actions: 33 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  S  S  S  .  .  .  .  
+S  S  S  A  w  .  .  .  
+S  S  S  w  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 17, Uncertain: 0, Movements: 6
+Adjacent: N:Safe | E:?Wumpus | S:?Wumpus | W:Safe
+Movement phases: 6 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 34
+Turned left
+
+--- Step 35 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  A  W  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (3,2), facing N
+Actions: 34 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  .  .  .  .  .  
+S  S  S  S  .  .  .  .  
+S  S  S  A  w  .  .  .  
+S  S  S  w  .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 17, Uncertain: 0, Movements: 6
+Adjacent: N:Safe | E:?Wumpus | S:?Wumpus | W:Safe
+Movement phases: 6 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 35
+
+WUMPUS MOVEMENT PHASE (after 35 actions)
+   Wumpus moved from (4,2) to (4,3)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(4, 3), (7, 7)]
+Re-running inference after Wumpus movement...
+
+--- Step 36 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  A  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (3,3), facing N
+Actions: 35 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(4, 3), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #7
+Marked 4 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  A  w? .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  w? .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 18, Uncertain: 4, Movements: 7
+Adjacent: N:?Wumpus,(Outdated) | E:?Wumpus,(Outdated) | S:Safe | W:Safe
+Movement phases: 7 | Uncertain cells: 2
+
+Adaptive Agent chooses action: LEFT
+Action count: 36
+Turned left
+
+--- Step 37 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  A  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (3,3), facing W
+Actions: 36 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(4, 3), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  A  w? .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  w? .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 18, Uncertain: 4, Movements: 7
+Adjacent: N:?Wumpus,(Outdated) | E:?Wumpus,(Outdated) | S:Safe | W:Safe
+Movement phases: 7 | Uncertain cells: 2
+
+Adaptive Agent chooses action: FORWARD
+Action count: 37
+
+--- Step 38 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  A  .  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,3), facing W
+Actions: 37 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(4, 3), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  A  S  w? .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  w? .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 18, Uncertain: 4, Movements: 7
+Adjacent: N:Unknown | E:Safe | S:Safe | W:Safe
+Movement phases: 7 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 38
+Turned left
+
+--- Step 39 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  A  .  W  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,3), facing S
+Actions: 38 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(4, 3), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  A  S  w? .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  w? .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 18, Uncertain: 4, Movements: 7
+Adjacent: N:Unknown | E:Safe | S:Safe | W:Safe
+Movement phases: 7 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 39
+
+--- Step 40 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  W  P  .  .  
+.  .  A  .  .  P  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,2), facing S
+Actions: 39 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(4, 3), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  A  S  w? .  .  .  
+S  S  S  w? .  .  .  .  
+S  S  .  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 18, Uncertain: 4, Movements: 7
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 7 | Uncertain cells: 0
+
+Adaptive Agent chooses action: FORWARD
+Action count: 40
+
+WUMPUS MOVEMENT PHASE (after 40 actions)
+   Wumpus moved from (4,3) to (4,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(4, 2), (7, 7)]
+Re-running inference after Wumpus movement...
+
+--- Step 41 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing S
+Actions: 40 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(4, 2), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #8
+Marked 4 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 8
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 8 | Uncertain cells: 0
+
+Adaptive Agent chooses action: LEFT
+Action count: 41
+Turned left
+
+--- Step 42 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 41 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 8
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 8 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 42
+Turned left
+
+--- Step 43 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 42 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 8
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 8 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 43
+Turned right
+
+--- Step 44 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 43 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 8
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 8 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 44
+Turned left
+
+--- Step 45 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  W  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 44 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(4, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 8
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 8 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 45
+
+WUMPUS MOVEMENT PHASE (after 45 actions)
+   Wumpus moved from (4,2) to (3,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(3, 2), (7, 7)]
+Turned right
+Re-running inference after Wumpus movement...
+
+--- Step 46 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 45 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(3, 2), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #9
+Marked 4 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 9
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 9 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 46
+Turned left
+
+--- Step 47 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 46 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 9
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 9 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 47
+Turned right
+
+--- Step 48 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 47 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 9
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 9 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 48
+Turned left
+
+--- Step 49 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 48 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 9
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 9 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 49
+Turned right
+
+--- Step 50 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 49 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 4, Movements: 9
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 9 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 50
+
+WUMPUS MOVEMENT PHASE (after 50 actions)
+   Wumpus moved from (3,2) to (2,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(2, 2), (7, 7)]
+Turned left
+Re-running inference after Wumpus movement...
+
+--- Step 51 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 50 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+ADAPTIVE AGENT: Detected Wumpus movement phase #10
+Marked 7 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 10
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 10 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 51
+Turned right
+
+--- Step 52 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 51 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 10
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 10 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 52
+Turned left
+
+--- Step 53 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 52 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 10
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 10 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 53
+Turned right
+
+--- Step 54 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 53 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 10
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 10 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 54
+Turned left
+
+--- Step 55 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 54 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 10
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 10 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 55
+
+WUMPUS MOVEMENT PHASE (after 55 actions)
+   Wumpus moved from (2,2) to (1,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(1, 2), (7, 7)]
+Turned right
+Re-running inference after Wumpus movement...
+
+--- Step 56 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  W  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 55 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(1, 2), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #11
+Marked 7 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 11
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 11 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 56
+Turned left
+
+--- Step 57 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  W  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 56 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(1, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 11
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 11 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 57
+Turned right
+
+--- Step 58 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  W  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 57 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(1, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 11
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 11 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 58
+Turned left
+
+--- Step 59 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  W  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 58 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(1, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 11
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 11 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 59
+Turned right
+
+--- Step 60 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  W  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 59 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(1, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 11
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 11 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 60
+
+WUMPUS MOVEMENT PHASE (after 60 actions)
+   Wumpus moved from (1,2) to (2,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(2, 2), (7, 7)]
+Turned left
+Re-running inference after Wumpus movement...
+
+--- Step 61 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 60 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+ADAPTIVE AGENT: Detected Wumpus movement phase #12
+Marked 7 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 12
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 12 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 61
+Turned right
+
+--- Step 62 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 61 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 12
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 12 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 62
+Turned left
+
+--- Step 63 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 62 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 12
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 12 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 63
+Turned right
+
+--- Step 64 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 63 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 12
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 12 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 64
+Turned left
+
+--- Step 65 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  W  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 64 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(2, 2), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 12
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 12 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 65
+
+WUMPUS MOVEMENT PHASE (after 65 actions)
+   Wumpus moved from (2,2) to (3,2)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(3, 2), (7, 7)]
+Turned right
+Re-running inference after Wumpus movement...
+
+--- Step 66 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 65 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(3, 2), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #13
+Marked 7 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 13
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 13 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 66
+Turned left
+
+--- Step 67 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 66 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 13
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 13 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 67
+Turned right
+
+--- Step 68 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 67 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 13
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 13 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 68
+Turned left
+
+--- Step 69 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 68 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 13
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 13 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 69
+Turned right
+
+--- Step 70 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  W  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 69 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(3, 2), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 13
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 13 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 70
+
+WUMPUS MOVEMENT PHASE (after 70 actions)
+   Wumpus moved from (3,2) to (3,1)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(3, 1), (7, 7)]
+Turned left
+Re-running inference after Wumpus movement...
+
+--- Step 71 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 70 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+ADAPTIVE AGENT: Detected Wumpus movement phase #14
+Marked 7 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 14
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 14 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 71
+Turned right
+
+--- Step 72 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 71 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 14
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 14 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 72
+Turned left
+
+--- Step 73 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 72 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 14
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 14 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 73
+Turned right
+
+--- Step 74 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 73 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 14
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 14 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 74
+Turned left
+
+--- Step 75 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 74 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 14
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 14 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 75
+
+WUMPUS MOVEMENT PHASE (after 75 actions)
+   Wumpus moved from (3,1) to (3,0)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(3, 0), (7, 7)]
+Turned right
+Re-running inference after Wumpus movement...
+
+--- Step 76 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  W  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 75 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(3, 0), (7, 7)]
+ADAPTIVE AGENT: Detected Wumpus movement phase #15
+Marked 7 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 15
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 15 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 76
+Turned left
+
+--- Step 77 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  W  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 76 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(3, 0), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 15
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 15 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 77
+Turned right
+
+--- Step 78 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  W  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 77 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(3, 0), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 15
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 15 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 78
+Turned left
+
+--- Step 79 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  W  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 78 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(3, 0), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 15
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 15 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 79
+Turned right
+
+--- Step 80 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  .  .  .  P  .  
+.  .  .  W  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 79 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(3, 0), (7, 7)]
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 15
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 15 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 80
+
+WUMPUS MOVEMENT PHASE (after 80 actions)
+   Wumpus moved from (3,0) to (3,1)
+   Wumpus at (7,7) stayed in place
+   New Wumpus locations: [(3, 1), (7, 7)]
+Turned left
+Re-running inference after Wumpus movement...
+
+--- Step 81 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 80 | Next Wumpus movement in: 5 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+ADAPTIVE AGENT: Detected Wumpus movement phase #16
+Marked 7 cells with outdated wumpus knowledge
+Cleared 0 outdated possible wumpus facts
+Re-evaluating environment knowledge...
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 16
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 16 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 81
+Turned right
+
+--- Step 82 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 81 | Next Wumpus movement in: 4 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 16
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 16 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 82
+Turned left
+
+--- Step 83 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 82 | Next Wumpus movement in: 3 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 16
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 16 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 83
+Turned right
+
+--- Step 84 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing E
+Actions: 83 | Next Wumpus movement in: 2 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 16
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 16 | Uncertain cells: 0
+   CAUTION: Target cell (3,1) has uncertain wumpus knowledge
+   Switching to safer alternative action
+
+Adaptive Agent chooses action: LEFT
+Action count: 84
+Turned left
+
+--- Step 85 ---
+Real Environment:
+.  P  .  P  .  .  P  W  
+.  .  .  .  .  .  .  P  
+.  .  .  .  .  P  .  P  
+.  .  P  .  P  G  .  .  
+.  .  .  .  .  P  .  .  
+.  .  .  .  .  P  .  .  
+.  .  A  W  .  .  P  .  
+.  .  .  .  P  .  P  P  
+Agent at (2,1), facing N
+Actions: 84 | Next Wumpus movement in: 1 actions
+Wumpus locations: [(3, 1), (7, 7)]
+Detected contradictions at (2,1): ['stench_vs_safe_wumpus']
+Resolving stench contradiction - wumpus may have moved
+Updated (2,2) from SafeWumpus to PossibleWumpus
+Updated (3,1) from SafeWumpus to PossibleWumpus
+Updated (2,0) from SafeWumpus to PossibleWumpus
+Updated (1,1) from SafeWumpus to PossibleWumpus
+
+Adaptive Agent's Knowledge:
+Adaptive Agent Knowledge Map:
+S  P  .  .  .  .  .  .  
+S  S  p  .  .  .  .  .  
+S  S  S  p  .  .  .  .  
+S  S  P  w? .  .  .  .  
+S  S  S  S  w? .  .  .  
+S  S  S  S  W  .  .  .  
+S  S  A  S  .  .  .  .  
+S  S  S  .  .  .  .  .  
+Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold
+Visited: 19, Uncertain: 7, Movements: 16
+Adjacent: N:Safe | E:Safe | S:Safe | W:Safe
+Movement phases: 16 | Uncertain cells: 0
+
+Adaptive Agent chooses action: RIGHT
+Action count: 85
+
+WUMPUS MOVEMENT PHASE (after 85 actions)
+   Wumpus moved from (3,1) to (2,1)
+   Wumpus at (7,7) stayed in place
+COLLISION! Wumpus moved into agent's cell (2, 1)
+YOU DIED! Wumpus moved into your location!
+GAME OVER! Agent was eaten by a moving Wumpus!
+-Adaptive Agent - Moving Wumpus Mode:
++Total Steps: 85
++Total Actions: 85
++Wumpus Movements: 17
++Final Score: -1085
++Gold Retrieved: No
++Mission Status: INCOMPLETE
+
+- Scoring:
++ Grab Gold: +10 No
++ Move Forward: -1 per move
++ Turn Left/Right: -1 per turn
++ Shoot Arrow: -10 No
++ Climb Out (with gold): +1000 No
++ Die: -1000 Yes
+
+MOVING WUMPUS CHALLENGE ANALYSIS:
++ Wumpus moved 17 times during the game
++ Agent adapted to dynamic environment: Struggled
++ Risk Management: Excellent

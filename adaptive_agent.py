@@ -1,23 +1,19 @@
 from const import DIRECTIONS, DX, DY
-from collections import deque
 from agent import Agent
-from knowledge_base import KnowledgeBase
-from inference_engine import InferenceEngine
-from planning_module import PlanningModule
 
 class AdaptiveAgent(Agent):
     
-    def __init__(self, N):
-        super().__init__(N)
+    def __init__(self, N, K=2):
+        super().__init__(N, K)
         
         self.last_action_count = 0
         self.outdated_wumpus_knowledge = set()
         self.movement_phases = 0
         
-        print("Adaptive Agent initialized for Moving Wumpus environment")
-        print("   • Enhanced knowledge management for dynamic threats")
-        print("   • Increased caution and safety margins")
-        print("   • Continuous belief updating capabilities")
+        print("- Adaptive Agent initialized for Moving Wumpus environment")
+        print("+ Enhanced knowledge management for dynamic threats")
+        print("+ Increased caution and safety margins")
+        print("+ Continuous belief updating capabilities")
     
     def handle_wumpus_movement_phase(self, current_action_count):
         if current_action_count > self.last_action_count and current_action_count % 5 == 0:
@@ -42,7 +38,7 @@ class AdaptiveAgent(Agent):
                     self.kb.fact_exists("PossibleWumpus", x, y)):
                     self.outdated_wumpus_knowledge.add((x, y))
         
-        print(f"   Marked {len(self.outdated_wumpus_knowledge)} cells with outdated wumpus knowledge")
+        print(f"Marked {len(self.outdated_wumpus_knowledge)} cells with outdated wumpus knowledge")
 
     def clear_outdated_wumpus_facts(self):
         cleared_count = 0
@@ -52,7 +48,7 @@ class AdaptiveAgent(Agent):
                 if self.kb.remove_fact("PossibleWumpus", x, y):
                     cleared_count += 1
                 
-        print(f"   Cleared {cleared_count} outdated possible wumpus facts")
+        print(f"Cleared {cleared_count} outdated possible wumpus facts")
     
     def has_recent_wumpus_evidence(self, x, y):
         for nx, ny in self.kb.get_adjacent(x, y):
@@ -62,7 +58,7 @@ class AdaptiveAgent(Agent):
         return False
     
     def reevaluate_environment_knowledge(self):
-        print("   Re-evaluating environment knowledge...")
+        print("Re-evaluating environment knowledge...")
         
         self.inference_engine.logic_inference_forward_chaining()
         
@@ -78,7 +74,7 @@ class AdaptiveAgent(Agent):
         
         if (x, y) in self.outdated_wumpus_knowledge:
             self.outdated_wumpus_knowledge.remove((x, y))
-            print(f"   Updated knowledge for cell ({x},{y}) with fresh percepts")
+            print(f"Updated knowledge for cell ({x},{y}) with fresh percepts")
     
     def check_for_contradictions(self, x, y, percept):
         contradictions = []
@@ -93,17 +89,17 @@ class AdaptiveAgent(Agent):
                 contradictions.append("stench_vs_safe_wumpus")
         
         if contradictions:
-            print(f"   Detected contradictions at ({x},{y}): {contradictions}")
+            print(f"Detected contradictions at ({x},{y}): {contradictions}")
             self.resolve_contradictions(x, y, contradictions)
     
     def resolve_contradictions(self, x, y, contradictions):
         for contradiction in contradictions:
             if contradiction == "stench_vs_safe_wumpus":
-                print(f"   Resolving stench contradiction - wumpus may have moved")
+                print(f"Resolving stench contradiction - wumpus may have moved")
                 for nx, ny in self.kb.get_adjacent(x, y):
                     if self.kb.remove_fact("SafeWumpus", nx, ny):
                         self.kb.add_fact("PossibleWumpus", nx, ny)
-                        print(f"      Updated ({nx},{ny}) from SafeWumpus to PossibleWumpus")
+                        print(f"Updated ({nx},{ny}) from SafeWumpus to PossibleWumpus")
     
     def resolve_knowledge_conflicts(self, x, y, percept):
         if not percept.get("stench"):
@@ -127,8 +123,6 @@ class AdaptiveAgent(Agent):
         )
         
         action = self.apply_dynamic_caution(action, agent_x, agent_y)
-        
-        self.print_action_rationale(action, agent_x, agent_y)
         
         return action
     
@@ -200,31 +194,6 @@ class AdaptiveAgent(Agent):
         diff = (target_idx - current_idx) % 4
         return "LEFT" if diff == 3 or diff == -1 else "RIGHT"
     
-    def print_action_rationale(self, action, agent_x, agent_y):
-        current_score = self.currentScore()
-        uncertainty_level = len(self.outdated_wumpus_knowledge)
-        
-        rationale = []
-        if uncertainty_level > 0:
-            rationale.append(f"uncertainty:{uncertainty_level}")
-        if self.movement_phases > 0:
-            rationale.append(f"movements:{self.movement_phases}")
-        
-        score_change = ""
-        if action == "FORWARD":
-            score_change = " (-1)"
-        elif action in ["LEFT", "RIGHT"]:
-            score_change = " (-1)"
-        elif action == "SHOOT":
-            score_change = " (-10)"
-        elif action == "GRAB":
-            score_change = " (+10)"
-        elif action == "CLIMB":
-            score_change = " (+1000)"
-        
-        rationale_str = f" [{','.join(rationale)}]" if rationale else ""
-        print(f"ADAPTIVE: {action}{score_change} | Score: {current_score} | Gold: {self.has_gold}{rationale_str}")
-    
     def print_agent_map(self, width, height, agent_x, agent_y):
         print("Adaptive Agent Knowledge Map:")
         for y in reversed(range(height)):
@@ -258,5 +227,5 @@ class AdaptiveAgent(Agent):
                 row.append(cell_str)
             print("".join(row))
         
-        print(f"Legend: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold")
+        print(f"Remember: A=Agent, S=Safe, P=Pit, W=Wumpus, p=?Pit, w=?Wumpus, w?=Uncertain Wumpus, G=Gold")
         print(f"Visited: {len(self.kb.visited)}, Uncertain: {len(self.outdated_wumpus_knowledge)}, Movements: {self.movement_phases}")

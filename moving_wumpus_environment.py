@@ -1,6 +1,6 @@
 import random
-from const import DIRECTIONS, DX, DY
-from environment import Environment, Cell
+from const import DX, DY
+from environment import Environment
 
 class MovingWumpusEnvironment(Environment):
     
@@ -11,9 +11,9 @@ class MovingWumpusEnvironment(Environment):
         
         self.update_wumpus_locations()
         
-        print(f"Moving Wumpus Environment Initialized:")
-        print(f"   • Wumpuses move every 5 agent actions")
-        print(f"   • Current Wumpus locations: {self.wumpus_locations}")
+        print(f"- Moving Wumpus Environment Initialized:")
+        print(f"+ Wumpuses move every 5 agent actions")
+        print(f"+ Current Wumpus locations: {self.wumpus_locations}")
     
     def update_wumpus_locations(self):
         self.wumpus_locations = []

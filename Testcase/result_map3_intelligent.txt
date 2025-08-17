@@ -1,0 +1,635 @@
+Enter map size N (recommended 4-10, default 8): Enter number of wumpuses K (recommended 1-4, default 2): Enter pit density (0.0-0.5, recommended 0.1-0.2, default 0.2): Choose mode (1=Intelligent Agent, 2=Random Agent, 3=Compare Agents, 4=Moving Wumpus Mode, default 1): Map Size: 8x8
+Wumpuses: 2
+Pit Density: 0.2
+Mode: Intelligent Agent
+Starting intelligent agent!
+
+-Step 1
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+A  .  .  .  .  P  W  .  
+Agent at (0,0), facing E
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+V  .  .  .  .  .  .  .  
+AV V  .  .  .  .  .  .  
+
+Current Score: 0 | Gold: No
+Adjacent cells: N:(0,1)=Safe | E:(1,0)=Safe
+Action: LEFT (-1) | Score: 0 | Gold: False | Pos: (0,0)
+
+Intelligent Agent chooses action: LEFT
+
+-Step 2
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+A  .  .  .  .  P  W  .  
+Agent at (0,0), facing N
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+V  .  .  .  .  .  .  .  
+AV V  .  .  .  .  .  .  
+
+Current Score: -1 | Gold: No
+Adjacent cells: N:(0,1)=Safe | E:(1,0)=Safe
+Action: FORWARD (-1) | Score: -1 | Gold: False | Pos: (0,0)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 3
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+A  .  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (0,1), facing N
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+P? .  .  .  .  .  .  .  
+AV P? .  .  .  .  .  .  
+V  V  .  .  .  .  .  .  
+
+Current Score: -2 | Gold: No
+Adjacent cells: N:(0,2)=P? | E:(1,1)=P? | S:(0,0)=Safe/Visited
+Action: RIGHT (-1) | Score: -2 | Gold: False | Pos: (0,1)
+
+Intelligent Agent chooses action: RIGHT
+
+-Step 4
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+A  .  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (0,1), facing E
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+P? .  .  .  .  .  .  .  
+AV P? .  .  .  .  .  .  
+V  V  .  .  .  .  .  .  
+
+Current Score: -3 | Gold: No
+Adjacent cells: N:(0,2)=P? | E:(1,1)=P? | S:(0,0)=Safe/Visited
+Action: RIGHT (-1) | Score: -3 | Gold: False | Pos: (0,1)
+
+Intelligent Agent chooses action: RIGHT
+
+-Step 5
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+A  .  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (0,1), facing S
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+P? .  .  .  .  .  .  .  
+AV P? .  .  .  .  .  .  
+V  V  .  .  .  .  .  .  
+
+Current Score: -4 | Gold: No
+Adjacent cells: N:(0,2)=P? | E:(1,1)=P? | S:(0,0)=Safe/Visited
+Action: FORWARD (-1) | Score: -4 | Gold: False | Pos: (0,1)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 6
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+A  .  .  .  .  P  W  .  
+Agent at (0,0), facing S
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+P? .  .  .  .  .  .  .  
+V  P? .  .  .  .  .  .  
+AV V  .  .  .  .  .  .  
+
+Current Score: -5 | Gold: No
+Adjacent cells: N:(0,1)=Safe/Visited | E:(1,0)=Safe
+Action: LEFT (-1) | Score: -5 | Gold: False | Pos: (0,0)
+
+Intelligent Agent chooses action: LEFT
+
+-Step 7
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+A  .  .  .  .  P  W  .  
+Agent at (0,0), facing E
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+P? .  .  .  .  .  .  .  
+V  P? .  .  .  .  .  .  
+AV V  .  .  .  .  .  .  
+
+Current Score: -6 | Gold: No
+Adjacent cells: N:(0,1)=Safe/Visited | E:(1,0)=Safe
+Action: FORWARD (-1) | Score: -6 | Gold: False | Pos: (0,0)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 8
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+.  A  .  .  .  P  W  .  
+Agent at (1,0), facing E
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+P! .  .  .  .  .  .  .  
+V  V  .  .  .  .  .  .  
+V  AV V  .  .  .  .  .  
+
+Current Score: -7 | Gold: No
+Adjacent cells: N:(1,1)=Safe | E:(2,0)=Safe | W:(0,0)=Safe/Visited
+Action: LEFT (-1) | Score: -7 | Gold: False | Pos: (1,0)
+
+Intelligent Agent chooses action: LEFT
+
+-Step 9
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+.  A  .  .  .  P  W  .  
+Agent at (1,0), facing N
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+P! .  .  .  .  .  .  .  
+V  V  .  .  .  .  .  .  
+V  AV V  .  .  .  .  .  
+
+Current Score: -8 | Gold: No
+Adjacent cells: N:(1,1)=Safe | E:(2,0)=Safe | W:(0,0)=Safe/Visited
+Action: FORWARD (-1) | Score: -8 | Gold: False | Pos: (1,0)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 10
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  A  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (1,1), facing N
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+P! V  .  .  .  .  .  .  
+V  AV V  .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -9 | Gold: No
+Adjacent cells: N:(1,2)=Safe | E:(2,1)=Safe | S:(1,0)=Safe/Visited | W:(0,1)=Safe/Visited
+Action: FORWARD (-1) | Score: -9 | Gold: False | Pos: (1,1)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 11
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  A  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (1,2), facing N
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! AV P? .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -10 | Gold: No
+Adjacent cells: N:(1,3)=P? | E:(2,2)=P? | S:(1,1)=Safe/Visited | W:(0,2)=PIT!
+Action: RIGHT (-1) | Score: -10 | Gold: False | Pos: (1,2)
+
+Intelligent Agent chooses action: RIGHT
+
+-Step 12
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  A  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (1,2), facing E
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! AV P? .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -11 | Gold: No
+Adjacent cells: N:(1,3)=P? | E:(2,2)=P? | S:(1,1)=Safe/Visited | W:(0,2)=PIT!
+Action: RIGHT (-1) | Score: -11 | Gold: False | Pos: (1,2)
+
+Intelligent Agent chooses action: RIGHT
+
+-Step 13
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  A  P  .  .  .  P  .  
+.  .  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (1,2), facing S
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! AV P? .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -12 | Gold: No
+Adjacent cells: N:(1,3)=P? | E:(2,2)=P? | S:(1,1)=Safe/Visited | W:(0,2)=PIT!
+Action: FORWARD (-1) | Score: -12 | Gold: False | Pos: (1,2)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 14
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  A  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (1,1), facing S
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  AV V  .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -13 | Gold: No
+Adjacent cells: N:(1,2)=Safe/Visited | E:(2,1)=Safe | S:(1,0)=Safe/Visited | W:(0,1)=Safe/Visited
+Action: LEFT (-1) | Score: -13 | Gold: False | Pos: (1,1)
+
+Intelligent Agent chooses action: LEFT
+
+-Step 15
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  A  G  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (1,1), facing E
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  AV V  .  .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -14 | Gold: No
+Adjacent cells: N:(1,2)=Safe/Visited | E:(2,1)=Safe | S:(1,0)=Safe/Visited | W:(0,1)=Safe/Visited
+Action: FORWARD (-1) | Score: -14 | Gold: False | Pos: (1,1)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 16
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  A  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (2,1), facing E
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  V  AV P? .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -15 | Gold: No
+Adjacent cells: N:(2,2)=P? | E:(3,1)=P? | S:(2,0)=Safe | W:(1,1)=Safe/Visited
+Action: GRAB (+10) | Score: -15 | Gold: False | Pos: (2,1)
+
+Intelligent Agent chooses action: GRAB
+Gold grabbed!
+
+-Step 17
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  A  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (2,1), facing E
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  V  AV P? .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -5 | Gold: Yes
+Adjacent cells: N:(2,2)=P? | E:(3,1)=P? | S:(2,0)=Safe | W:(1,1)=Safe/Visited
+Action: RIGHT (-1) | Score: -5 | Gold: True | Pos: (2,1)
+
+Intelligent Agent chooses action: RIGHT
+
+-Step 18
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  A  .  .  .  .  .  
+.  .  .  .  .  P  W  .  
+Agent at (2,1), facing S
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  V  AV P? .  .  .  .  
+V  V  V  .  .  .  .  .  
+
+Current Score: -6 | Gold: Yes
+Adjacent cells: N:(2,2)=P? | E:(3,1)=P? | S:(2,0)=Safe | W:(1,1)=Safe/Visited
+Action: FORWARD (-1) | Score: -6 | Gold: True | Pos: (2,1)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 19
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+.  .  A  .  .  P  W  .  
+Agent at (2,0), facing S
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  V  V  P? .  .  .  .  
+V  V  AV V  .  .  .  .  
+
+Current Score: -7 | Gold: Yes
+Adjacent cells: N:(2,1)=Safe/Visited | E:(3,0)=Safe | W:(1,0)=Safe/Visited
+Action: RIGHT (-1) | Score: -7 | Gold: True | Pos: (2,0)
+
+Intelligent Agent chooses action: RIGHT
+
+-Step 20
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+.  .  A  .  .  P  W  .  
+Agent at (2,0), facing W
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  V  V  P? .  .  .  .  
+V  V  AV V  .  .  .  .  
+
+Current Score: -8 | Gold: Yes
+Adjacent cells: N:(2,1)=Safe/Visited | E:(3,0)=Safe | W:(1,0)=Safe/Visited
+Action: FORWARD (-1) | Score: -8 | Gold: True | Pos: (2,0)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 21
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+.  A  .  .  .  P  W  .  
+Agent at (1,0), facing W
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  V  V  P? .  .  .  .  
+V  AV V  V  .  .  .  .  
+
+Current Score: -9 | Gold: Yes
+Adjacent cells: N:(1,1)=Safe/Visited | E:(2,0)=Safe/Visited | W:(0,0)=Safe/Visited
+Action: FORWARD (-1) | Score: -9 | Gold: True | Pos: (1,0)
+
+Intelligent Agent chooses action: FORWARD
+
+-Step 22
+Real Environment:
+.  P  .  .  .  .  .  .  
+P  .  .  .  W  P  .  P  
+P  .  .  .  .  .  .  .  
+.  .  .  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+P  .  P  .  .  .  P  .  
+.  .  .  .  .  .  .  .  
+A  .  .  .  .  P  W  .  
+Agent at (0,0), facing W
+
+Intelligent Agent's Knowledge:
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  
+.  P? .  .  .  .  .  .  
+P! V  P? .  .  .  .  .  
+V  V  V  P? .  .  .  .  
+AV V  V  V  .  .  .  .  
+
+Current Score: -10 | Gold: Yes
+Adjacent cells: N:(0,1)=Safe/Visited | E:(1,0)=Safe/Visited
+Action: CLIMB (+1000) | Score: -10 | Gold: True | Pos: (0,0)
+
+Intelligent Agent chooses action: CLIMB
+SUCCESS! Agent climbed out with the gold! Mission accomplished!
+FINAL SCORE: 990
+- Intelligent agent:
++ Total Steps: 22
++ Final Score: 990
++ Gold Retrieved: Yes
++ Mission Status: SUCCESS
+
+Scoring:
++ Grab Gold: +10  
++ Shoot Arrow: -0
++ Climb Out (with gold): +1000 
++ Die: -0
