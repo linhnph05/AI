@@ -258,20 +258,7 @@ class PlanningModule:
             else:
                 return "FORWARD"
         
-        result = self.dijkstra_search(agent_x, agent_y, agent_dir, has_gold)
-        if result:
-            target_x, target_y, path = result
-            risk = self.calculate_cell_risk(target_x, target_y)
-            if risk < 100:
-                if len(path) > 1:
-                    next_x, next_y, next_dir = path[1]
-                    required_dir = self.get_direction_to_move(agent_x, agent_y, next_x, next_y)
-                    
-                    if agent_dir != required_dir:
-                        return self._get_turn_action(agent_dir, required_dir)
-                    else:
-                        return "FORWARD"
-        
+        # Check for safe unknown cells (not adjacent to any danger signals)
         safe_unknown = []
         for next_dir in DIRECTIONS:
             dx, dy = DX[next_dir], DY[next_dir]
@@ -301,56 +288,8 @@ class PlanningModule:
             else:
                 return "FORWARD"
         
-        risky_cells, all_dangerous = self.analyze_exploration_options(agent_x, agent_y)
-        
-        if all_dangerous and risky_cells:
-            print(f"All unexplored cells are dangerous! Found {len(risky_cells)} risky options.")
-            print(f"Current situation: Score={current_score}, Gold={'Yes' if has_gold else 'No'}")
-            
-            strategy = self.evaluate_risk_vs_reward(current_score, has_gold, risky_cells)
-            
-            if strategy == "RETREAT":
-                print(f"Strategy: RETREAT - Returning to (0,0) to preserve score")
-                if (agent_x, agent_y) != (0, 0):
-                    path = self.a_star_search(agent_x, agent_y, 0, 0, agent_dir, avoid_dangerous=False)
-                    if path and len(path) > 1:
-                        next_x, next_y, next_dir = path[1]
-                        required_dir = self.get_direction_to_move(agent_x, agent_y, next_x, next_y)
-                        
-                        if agent_dir != required_dir:
-                            return self._get_turn_action(agent_dir, required_dir)
-                        else:
-                            return "FORWARD"
-                else:
-                    return "CLIMB"
-                    
-            elif strategy == "RISK_CLOSEST":
-                print(f"Strategy: RISK_CLOSEST - Taking calculated risk on nearest cell")
-                risky_action = self.find_closest_risky_cell(agent_x, agent_y, agent_dir, risky_cells)
-                if risky_action:
-                    return risky_action
-        
-        low_risk_adjacent = []
-        for next_dir in DIRECTIONS:
-            dx, dy = DX[next_dir], DY[next_dir]
-            nx, ny = agent_x + dx, agent_y + dy
-            
-            if 0 <= nx < self.N and 0 <= ny < self.N:
-                if (nx, ny) not in self.kb.visited:
-                    risk = self.calculate_cell_risk(nx, ny)
-                    if risk < float('inf'):
-                        low_risk_adjacent.append((risk, nx, ny, next_dir))
-        
-        if low_risk_adjacent:
-            low_risk_adjacent.sort()
-            risk, nx, ny, required_dir = low_risk_adjacent[0]
-            
-            print(f"Taking calculated risk: cell ({nx},{ny}) with risk {risk:.1f}")
-            
-            if agent_dir != required_dir:
-                return self._get_turn_action(agent_dir, required_dir)
-            else:
-                return "FORWARD"
+        # No safe adjacent cells available - retreat to (0,0) immediately
+        print(f"No safe adjacent cells available - retreating to (0,0) for safety")
         
         if (agent_x, agent_y) != (0, 0):
             print(f"No safe moves available, returning to start")
