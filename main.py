@@ -79,7 +79,7 @@ def run_autonomous_mode(env, agent, agent_type="Intelligent"):
                 if env.agent_x != 0 or env.agent_y != 0:
                     print("Can only climb at starting position (0,0)!")
         
-        time.sleep(0.5)
+        # time.sleep(0.5)
 
     current_score = agent.currentScore()
     print(f"- {agent_type} agent:")
