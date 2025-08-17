@@ -9,15 +9,14 @@ class Cell:
 class Environment:
     def __init__(self, N=8, K=2, p=0.2):
         self.N = N
-        self.grid = [[Cell() for _ in range(N)] for _ in range(N)]  # grid[y][x]
-        self.agent_x = 0  # column
-        self.agent_y = 0  # row
+        self.grid = [[Cell() for _ in range(N)] for _ in range(N)]
+        self.agent_x = 0
+        self.agent_y = 0
         self.agent_dir = 'E'
         self.scream = False
-        self.bump = False  # Track if agent bumped into a wall
-        self.has_gold = False  # Track if agent has collected gold
+        self.bump = False
+        self.has_gold = False
 
-        # Init
         self.place_pits(p)
         self.place_wumpus(K)
         self.place_gold()
@@ -35,7 +34,6 @@ class Environment:
             y = random.randint(0, self.N - 1)
             if not self.grid[y][x].pit and not self.grid[y][x].wumpus and (x, y) != (0, 0):
                 self.grid[y][x].wumpus = True
-                # self.wumpus_locations.append((x, y))
                 count += 1
 
     def place_gold(self):
@@ -65,17 +63,17 @@ class Environment:
             "bump": self.bump,
             "scream": self.scream,
         }
-        self.scream = False  # Reset scream after sending to agent
-        self.bump = False  # Reset bump after sending to agent
+        self.scream = False
+        self.bump = False
         return percept
 
     def check_die(self):
         cell = self.grid[self.agent_y][self.agent_x]
         if cell.wumpus:
-            print("💀 YOU DIED! Reason: Eaten by Wumpus!")
+            print("YOU DIED! Reason: Eaten by Wumpus!")
             return True
         elif cell.pit:
-            print("💀 YOU DIED! Reason: Fell into a pit!")
+            print("YOU DIED! Reason: Fell into a pit!")
             return True
         return False
 
@@ -84,10 +82,10 @@ class Environment:
         nx, ny = self.agent_x + dx, self.agent_y + dy
         if 0 <= nx < self.N and 0 <= ny < self.N:
             self.agent_x, self.agent_y = nx, ny
-            died = self.check_die()  # Check for death after moving
-            return died, False  # Return (died, bump)
+            died = self.check_die()
+            return died, False
         self.bump = True
-        return False, True  # Return (died, bump)
+        return False, True
 
 
     def turn_left(self):
@@ -102,24 +100,19 @@ class Environment:
 
     def shoot(self):
         dx, dy = DX[self.agent_dir], DY[self.agent_dir]
-        # Start from the next cell in the direction agent is facing
         x, y = self.agent_x + dx, self.agent_y + dy
         
-        # Travel in straight line until hitting boundary or wumpus
         while 0 <= x < self.N and 0 <= y < self.N:
             if self.grid[y][x].wumpus:
                 self.grid[y][x].wumpus = False
-                # self.wumpus_locations.remove((x, y))
                 self.scream = True
                 return
             x += dx
             y += dy
         
-        # No wumpus hit
         self.scream = False
 
     def grab_gold(self):
-        """Remove gold from current location in environment."""
         if self.grid[self.agent_y][self.agent_x].gold:
             self.grid[self.agent_y][self.agent_x].gold = False
             self.has_gold = True
@@ -127,20 +120,19 @@ class Environment:
         return False
 
     def climb(self):
-        """Agent climbs out if at (0,0) with gold."""
         if self.agent_x == 0 and self.agent_y == 0 and self.has_gold:
-            print("🎉 SUCCESS! Agent climbed out with the gold! Mission accomplished!")
+            print("SUCCESS! Agent climbed out with the gold! Mission accomplished!")
             return True
         elif self.agent_x == 0 and self.agent_y == 0:
-            print("❌ Cannot climb without gold!")
-            return False
+            print("You climbed out but you don't have the gold!")
+            return True
         else:
-            print("❌ Can only climb at starting position (0,0)!")
+            print("Can only climb at starting position (0,0)!")
             return False
 
     def print_map(self):
-        for j in range(self.N - 1, -1, -1):  # j = y (row)
-            for i in range(self.N):          # i = x (col)
+        for j in range(self.N - 1, -1, -1):
+            for i in range(self.N):
                 c = self.grid[j][i]
                 symbol = '.'
                 if self.agent_x == i and self.agent_y == j:

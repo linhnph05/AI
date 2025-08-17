@@ -19,129 +19,94 @@ def get_user_configuration():
     return N, K, p, mode
 
 def run_autonomous_mode(env, agent, agent_type="Intelligent"):
-    """Run the autonomous agent simulation with hybrid planning and inference."""
     step_count = 0
-    max_steps = 200  # Prevent infinite loops
+    max_steps = 200
     print(f"Starting {agent_type.lower()} agent!")
 
     while step_count < max_steps:
         step_count += 1
         print(f"\n-Step {step_count}")
 
-        # Display the real environment
         print("Real Environment:")
         env.print_map()
         
-        # Get percepts from environment
         percepts = env.env_get_percepts()
         
-        # Update agent's knowledge base with new percepts
         agent.Agent_get_percepts(percepts)
         
-        # Display agent's knowledge map
         print(f"\n{agent_type} Agent's Knowledge:")
         agent.print_agent_map(env.N, env.N, env.agent_x, env.agent_y)
-        
-        # Display current score
-        current_score = agent.calculate_current_score()
-        print(f"\n📊 Current Score: {current_score} | Gold: {'✅' if agent.has_gold else '❌'}")
+        current_score = agent.currentScore()
+        print(f"\nCurrent Score: {current_score} | Gold: {'Yes' if agent.has_gold else 'No'}")
 
-        # Agent decides next action
         action = agent.choose_action()
-        print(f"\n🎯 {agent_type} Agent chooses action: {action}")
+        print(f"\n{agent_type} Agent chooses action: {action}")
         
-        # Execute the action
         if action == "FORWARD":
             died, bump = env.move_forward()
-            agent.move_forward_action()  # Apply movement cost -1
+            agent.move_forward_action()
             if died:
-                agent.die_action()  # Apply death penalty -1000
-                print("💀 GAME OVER! Agent died!")
+                agent.die_action()
+                print("GAME OVER! Agent died!")
                 break
             if bump:
-                print("💥 BUMP! Hit a wall!")
+                print("BUMP! Hit a wall!")
         elif action == "LEFT":
             env.turn_left()
-            agent.turn_action()  # Apply turn cost -1
-            print("↺ Turned left")
+            agent.turn_action()
         elif action == "RIGHT":
             env.turn_right()
-            agent.turn_action()  # Apply turn cost -1
-            print("↻ Turned right")
+            agent.turn_action()
         elif action == "SHOOT":
-            if agent.shoot_action():  # Apply shooting cost -10
+            if agent.shoot_action():
                 env.shoot()
                 if env.scream:
-                    print("🎯 SCREAM! Wumpus killed!")
+                    print("SCREAM! Wumpus killed!")
                 else:
-                    print("🏹 Arrow shot, but no scream...")
+                    print("Arrow shot, but no scream...")
         elif action == "GRAB":
-            # Check if agent can grab gold (sees glitter)
-            if agent.grab_gold_action():  # Apply gold bonus +10
-                # Environment removes gold from the cell
+            if agent.grab_gold_action():
                 env.grab_gold()
             else:
-                pass  # Error message already printed in agent method
+                pass
         elif action == "CLIMB":
-            if agent.climb_action():  # Apply climb bonus +1000 or +0
+            if agent.climb_action():
                 if env.climb():
-                    final_score = agent.calculate_current_score()
-                    print("🎉 MISSION COMPLETE! Agent successfully escaped with the gold!")
-                    print(f"🏆 FINAL SCORE: {final_score}")
+                    current_score = agent.currentScore()
+                    print(f"FINAL SCORE: {current_score}")
                     break
             else:
-                if env.agent_x == 0 and env.agent_y == 0:
-                    print("❌ Cannot climb without gold!")
-                else:
-                    print("❌ Can only climb at starting position (0,0)!")
-        elif action == "QUIT":
-            print("Agent has no safe moves available. Exploration ended.")
-            break
+                if env.agent_x != 0 or env.agent_y != 0:
+                    print("Can only climb at starting position (0,0)!")
         
-        # Small delay for readability
         time.sleep(0.5)
 
-    final_score = agent.calculate_current_score()
-    print(f"\n" + "="*60)
-    print(f"📈 {agent_type.upper()} AGENT SIMULATION SUMMARY")
-    print(f"="*60)
-    print(f"Total Steps: {step_count}")
-    print(f"Final Score: {final_score}")
-    print(f"Agent Position: ({env.agent_x}, {env.agent_y})")
-    if hasattr(agent, 'kb'):
-        print(f"Cells Visited: {len(agent.kb.visited)}/{env.N * env.N}")
-    else:
-        print(f"Cells Visited: {len(agent.visited)}/{env.N * env.N}")
-    print(f"Gold Retrieved: {'✅ Yes' if agent.has_gold else '❌ No'}")
-    print(f"Mission Status: {'🎉 SUCCESS' if agent.has_gold and env.agent_x == 0 and env.agent_y == 0 else '❌ INCOMPLETE'}")
-    print(f"\n📊 SCORING BREAKDOWN:")
-    print(f"   • Grab Gold: +10 {'✅' if agent.has_gold else '❌'}")
-    print(f"   • Move Forward: -1 per move")
-    print(f"   • Turn Left/Right: -1 per turn")
-    print(f"   • Shoot Arrow: -10 {'✅' if agent.shoot else '❌'}")
-    print(f"   • Climb Out (with gold): +1000 {'✅' if agent.has_gold and env.agent_x == 0 and env.agent_y == 0 else '❌'}")
-    print(f"   • Die: -1000 {'❌' if final_score <= -1000 else '✅'}")
+    current_score = agent.currentScore()
+    print(f"- {agent_type} agent:")
+    print(f"+ Total Steps: {step_count}")
+    print(f"+ Final Score: {current_score}")
+    print(f"+ Gold Retrieved: {'Yes' if agent.has_gold else 'No'}")
+    print(f"+ Mission Status: {'SUCCESS' if agent.has_gold and env.agent_x == 0 and env.agent_y == 0 else 'INCOMPLETE'}")
+    print(f"\nScoring:")
+    print(f"+ {'Grab Gold: +10 ' if agent.has_gold else 'Grab Gold: +0 '} ")
+    print(f"+ {'Shoot Arrow: -10' if agent.shoot else 'Shoot Arrow: -0'}")
+    print(f"+ {'Climb Out (with gold): +1000 ' if agent.has_gold and env.agent_x == 0 and env.agent_y == 0 else 'Climb Out (with gold): -0'}")
+    print(f"+ {'Die: -1000 ' if current_score <= -1000 else 'Die: -0'}")
     
-    return final_score, step_count, agent.has_gold, (env.agent_x == 0 and env.agent_y == 0)
+    return current_score, step_count, agent.has_gold, (env.agent_x == 0 and env.agent_y == 0)
 
 def run_comparison_experiment(N, K, p, num_trials=10):
-    """
-    Run comparison experiments between intelligent agent and random agent.
-    """
-    print(f"\n{'='*80}")
-    print(f"🧪 AGENT COMPARISON EXPERIMENT")
-    print(f"{'='*80}")
-    print(f"Configuration: {N}x{N} map, {K} wumpuses, {p} pit density")
-    print(f"Running {num_trials} trials for each agent...")
+    print(f"- Agent comparison:")
+    print(f"Config: {N}x{N} map, {K} wumpuses, {p} pit density")
+    print(f"Running {num_trials} trials for each agent")
     
     intelligent_results = []
     random_results = []
     
     for trial in range(num_trials):
-        print(f"\n🔬 Trial {trial + 1}/{num_trials}")
+        print(f"\nTrial {trial + 1}/{num_trials}")
         print("-" * 40)
         
-        # Test intelligent agent
         print(f"Testing Intelligent Agent...")
         env_intelligent = Environment(N=N, K=K, p=p)
         agent_intelligent = Agent(N)
@@ -156,7 +121,6 @@ def run_comparison_experiment(N, K, p, num_trials=10):
         
         print(f"\n" + "-" * 40)
         
-        # Test random agent on same configuration
         print(f"Testing Random Agent...")
         env_random = Environment(N=N, K=K, p=p)
         agent_random = RandomAgent(N)
@@ -168,95 +132,64 @@ def run_comparison_experiment(N, K, p, num_trials=10):
             'success': has_gold_r and climbed_r,
             'survived': score_r > -1000
         })
-    
-    # Calculate statistics
-    print(f"\n{'='*80}")
-    print(f"📊 EXPERIMENT RESULTS SUMMARY")
-    print(f"{'='*80}")
-    
-    # Intelligent Agent Stats
     i_scores = [r['score'] for r in intelligent_results]
     i_steps = [r['steps'] for r in intelligent_results]
     i_success_rate = sum(r['success'] for r in intelligent_results) / num_trials * 100
     i_survival_rate = sum(r['survived'] for r in intelligent_results) / num_trials * 100
     i_gold_rate = sum(r['has_gold'] for r in intelligent_results) / num_trials * 100
+    i_avg_score = sum(i_scores)/len(i_scores)
+    i_avg_steps = sum(i_steps)/len(i_steps)
     
-    print(f"\n🤖 INTELLIGENT AGENT PERFORMANCE:")
-    print(f"   • Average Score: {sum(i_scores)/len(i_scores):.1f}")
-    print(f"   • Best Score: {max(i_scores)}")
-    print(f"   • Worst Score: {min(i_scores)}")
-    print(f"   • Average Steps: {sum(i_steps)/len(i_steps):.1f}")
-    print(f"   • Success Rate: {i_success_rate:.1f}% (found gold + escaped)")
-    print(f"   • Survival Rate: {i_survival_rate:.1f}% (didn't die)")
-    print(f"   • Gold Finding Rate: {i_gold_rate:.1f}%")
-    
-    # Random Agent Stats
     r_scores = [r['score'] for r in random_results]
     r_steps = [r['steps'] for r in random_results]
     r_success_rate = sum(r['success'] for r in random_results) / num_trials * 100
     r_survival_rate = sum(r['survived'] for r in random_results) / num_trials * 100
     r_gold_rate = sum(r['has_gold'] for r in random_results) / num_trials * 100
+    r_avg_score = sum(r_scores)/len(r_scores)
+    r_avg_steps = sum(r_steps)/len(r_steps)
     
-    print(f"\n🎲 RANDOM AGENT PERFORMANCE:")
-    print(f"   • Average Score: {sum(r_scores)/len(r_scores):.1f}")
-    print(f"   • Best Score: {max(r_scores)}")
-    print(f"   • Worst Score: {min(r_scores)}")
-    print(f"   • Average Steps: {sum(r_steps)/len(r_steps):.1f}")
-    print(f"   • Success Rate: {r_success_rate:.1f}% (found gold + escaped)")
-    print(f"   • Survival Rate: {r_survival_rate:.1f}% (didn't die)")
-    print(f"   • Gold Finding Rate: {r_gold_rate:.1f}%")
+    score_improvement = i_avg_score - r_avg_score
+    success_improvement = i_success_rate - r_success_rate
+    survival_improvement = i_survival_rate - r_survival_rate
+    efficiency_ratio = r_avg_steps / i_avg_steps
     
-    # Comparison
-    print(f"\n📈 PERFORMANCE COMPARISON:")
-    score_improvement = (sum(i_scores)/len(i_scores)) - (sum(r_scores)/len(r_scores))
-    print(f"   • Score Improvement: {score_improvement:+.1f} points")
-    print(f"   • Success Rate Improvement: {i_success_rate - r_success_rate:+.1f}%")
-    print(f"   • Survival Rate Improvement: {i_survival_rate - r_survival_rate:+.1f}%")
-    print(f"   • Efficiency: Intelligent agent is {(sum(r_steps)/len(r_steps))/(sum(i_steps)/len(i_steps)):.1f}x more efficient")
+    print(f"\n-Intelligent agent:\n+ Average Score: {i_avg_score:.1f}\n+ Best Score: {max(i_scores)}\n+ Worst Score: {min(i_scores)}\n+ Average Steps: {i_avg_steps:.1f}\n+ Success Rate: {i_success_rate:.1f}% (found gold + escaped)\n+ Survival Rate: {i_survival_rate:.1f}% (didn't die)\n+ Gold Finding Rate: {i_gold_rate:.1f}%")
+    
+    print(f"\n-Random agent:\n+ Average Score: {r_avg_score:.1f}\n+ Best Score: {max(r_scores)}\n+ Worst Score: {min(r_scores)}\n+ Average Steps: {r_avg_steps:.1f}\n+ Success Rate: {r_success_rate:.1f}% (found gold + escaped)\n+ Survival Rate: {r_survival_rate:.1f}% (didn't die)\n+ Gold Finding Rate: {r_gold_rate:.1f}%")
+    
+    print(f"\n- Comparison:\n+ Score Improvement: {score_improvement:+.1f} points\n+ Success Rate Improvement: {success_improvement:+.1f}%\n+ Survival Rate Improvement: {survival_improvement:+.1f}%\n+ Efficiency: Intelligent agent is {efficiency_ratio:.1f}x more efficient")
     
     return intelligent_results, random_results
 
 def run_moving_wumpus_mode(env, agent, agent_type="Intelligent"):
-    """Run simulation with moving wumpuses that move every 5 actions."""
     step_count = 0
-    max_steps = 300  # Increase max steps for dynamic environment
-    print(f"🐺 Starting {agent_type.lower()} agent in Moving Wumpus mode!")
-    print("⚠️  WARNING: Wumpuses move every 5 actions - previous knowledge may become outdated!")
+    max_steps = 300
+    print(f"Starting {agent_type.lower()} agent in Moving Wumpus mode!")
+    print("WARNING: Wumpuses move every 5 actions - previous knowledge may become outdated!")
 
     while step_count < max_steps:
         step_count += 1
         print(f"\n--- Step {step_count} ---")
 
-        # Display the real environment
         print("Real Environment:")
         env.print_map()
         
-        # Get percepts from environment
         percepts = env.env_get_percepts()
         
-        # Update agent's knowledge base with new percepts
         agent.Agent_get_percepts(percepts)
         
-        # Handle wumpus movement detection for adaptive agents
-        if hasattr(agent, 'handle_wumpus_movement_phase'):
-            wumpus_moved = agent.handle_wumpus_movement_phase(env.action_count)
-            if wumpus_moved:
-                print("🧠 Adaptive agent detected and handled wumpus movement phase")
+        wumpus_moved = agent.handle_wumpus_movement_phase(env.action_count)
         
-        # Display agent's knowledge map
         print(f"\n{agent_type} Agent's Knowledge:")
         agent.print_agent_map(env.N, env.N, env.agent_x, env.agent_y)
         
-        # Display current score and action count
-        current_score = agent.calculate_current_score()
+        current_score = agent.currentScore()
         actions_until_wumpus_move = 5 - (env.action_count % 5)
-        print(f"\n📊 Score: {current_score} | Gold: {'✅' if agent.has_gold else '❌'} | Actions until Wumpus move: {actions_until_wumpus_move}")
+        print(f"\nScore: {current_score} | Gold: {'Yes' if agent.has_gold else 'No'} | Actions until Wumpus move: {actions_until_wumpus_move}")
 
-        # Agent decides next action
         action = agent.choose_action()
-        print(f"\n🎯 {agent_type} Agent chooses action: {action}")
+        print(f"\n{agent_type} Agent chooses action: {action}")
         
-        # Execute the action with dynamic environment handling
         agent_died = False
         
         if action == "FORWARD":
@@ -266,115 +199,95 @@ def run_moving_wumpus_mode(env, agent, agent_type="Intelligent"):
                 agent.die_action()
                 agent_died = True
                 if env.check_wumpus_collision():
-                    print("💀 GAME OVER! Agent was eaten by a moving Wumpus!")
+                    print("GAME OVER! Agent was eaten by a moving Wumpus!")
                 else:
-                    print("💀 GAME OVER! Agent died!")
+                    print("GAME OVER! Agent died!")
                 break
             if bump:
-                print("💥 BUMP! Hit a wall!")
+                print("BUMP! Hit a wall!")
                 
         elif action == "LEFT":
             died = env.turn_left()
             agent.turn_action()
             if died:
                 agent.die_action()
-                print("💀 GAME OVER! Agent was eaten by a moving Wumpus!")
+                print("GAME OVER! Agent was eaten by a moving Wumpus!")
                 break
-            print("↺ Turned left")
+            print("Turned left")
             
         elif action == "RIGHT":
             died = env.turn_right()
             agent.turn_action()
             if died:
                 agent.die_action()
-                print("💀 GAME OVER! Agent was eaten by a moving Wumpus!")
+                print("GAME OVER! Agent was eaten by a moving Wumpus!")
                 break
-            print("↻ Turned right")
+            print("Turned right")
             
         elif action == "SHOOT":
             if agent.shoot_action():
                 died = env.shoot()
                 if died:
                     agent.die_action()
-                    print("💀 GAME OVER! Agent was eaten by a moving Wumpus!")
+                    print("GAME OVER! Agent was eaten by a moving Wumpus!")
                     break
                 if env.scream:
-                    print("🎯 SCREAM! Wumpus killed!")
-                    # Agent should update knowledge about killed wumpus
+                    print("SCREAM! Wumpus killed!")
                     if hasattr(agent, 'inference_engine'):
                         agent.inference_engine.handle_shoot(env.agent_x, env.agent_y, env.agent_dir)
                 else:
-                    print("🏹 Arrow shot, but no scream...")
+                    print("Arrow shot, but no scream...")
                     
         elif action == "GRAB":
             if agent.grab_gold_action():
                 env.grab_gold()
-                # Check if wumpus moved during grab action
                 if env.check_wumpus_collision():
                     agent.die_action()
-                    print("💀 GAME OVER! Agent was eaten by a moving Wumpus during grab!")
+                    print("GAME OVER! Agent was eaten by a moving Wumpus during grab!")
                     break
                     
         elif action == "CLIMB":
             if agent.climb_action():
                 if env.climb():
-                    final_score = agent.calculate_current_score()
-                    print("🎉 MISSION COMPLETE! Agent successfully escaped with the gold!")
-                    print(f"🏆 FINAL SCORE: {final_score}")
+                    current_score = agent.currentScore()
+                    print("MISSION COMPLETE! Agent successfully escaped with the gold!")
+                    print(f"FINAL SCORE: {current_score}")
                     break
             else:
-                if env.agent_x == 0 and env.agent_y == 0:
-                    print("❌ Cannot climb without gold!")
-                else:
-                    print("❌ Can only climb at starting position (0,0)!")
+                if env.agent_x != 0 or env.agent_y != 0:
+                    print("Can only climb at starting position (0,0)!")
                     
-        elif action == "QUIT":
-            print("Agent has no safe moves available. Exploration ended.")
-            break
-        
-        # After wumpus movement, run inference again to update knowledge
         if env.action_count % 5 == 0 and hasattr(agent, 'inference_engine'):
-            print("🧠 Re-running inference after Wumpus movement...")
+            print("Re-running inference after Wumpus movement...")
             agent.inference_engine.logic_inference_forward_chaining()
         
-        # Small delay for readability
         time.sleep(0.7)
 
-    final_score = agent.calculate_current_score()
-    print(f"\n" + "="*70)
-    print(f"📈 {agent_type.upper()} AGENT - MOVING WUMPUS SIMULATION SUMMARY")
-    print(f"="*70)
-    print(f"Total Steps: {step_count}")
-    print(f"Total Actions: {env.action_count}")
-    print(f"Wumpus Movements: {env.action_count // 5}")
-    print(f"Final Score: {final_score}")
-    print(f"Agent Position: ({env.agent_x}, {env.agent_y})")
-    if hasattr(agent, 'kb'):
-        print(f"Cells Visited: {len(agent.kb.visited)}/{env.N * env.N}")
-    else:
-        print(f"Cells Visited: {len(agent.visited)}/{env.N * env.N}")
-    print(f"Gold Retrieved: {'✅ Yes' if agent.has_gold else '❌ No'}")
-    print(f"Mission Status: {'🎉 SUCCESS' if agent.has_gold and env.agent_x == 0 and env.agent_y == 0 else '❌ INCOMPLETE'}")
-    print(f"Final Wumpus Locations: {env.wumpus_locations}")
+    current_score = agent.currentScore()
+    print(f"-{agent_type.upper()} Agent - Moving Wumpus Mode:")
+    print(f"+Total Steps: {step_count}")
+    print(f"+Total Actions: {env.action_count}")
+    print(f"+Wumpus Movements: {env.action_count // 5}")
+    print(f"+Final Score: {current_score}")
+    print(f"+Gold Retrieved: {'Yes' if agent.has_gold else 'No'}")
+    print(f"+Mission Status: {'SUCCESS' if agent.has_gold and env.agent_x == 0 and env.agent_y == 0 else 'INCOMPLETE'}")
     
-    print(f"\n📊 SCORING BREAKDOWN:")
-    print(f"   • Grab Gold: +10 {'✅' if agent.has_gold else '❌'}")
-    print(f"   • Move Forward: -1 per move")
-    print(f"   • Turn Left/Right: -1 per turn")
-    print(f"   • Shoot Arrow: -10 {'✅' if agent.shoot else '❌'}")
-    print(f"   • Climb Out (with gold): +1000 {'✅' if agent.has_gold and env.agent_x == 0 and env.agent_y == 0 else '❌'}")
-    print(f"   • Die: -1000 {'❌' if final_score <= -1000 else '✅'}")
-    
-    print(f"\n🐺 MOVING WUMPUS CHALLENGE ANALYSIS:")
     wumpus_movements = env.action_count // 5
-    if wumpus_movements > 0:
-        print(f"   • Wumpus moved {wumpus_movements} times during the game")
-        print(f"   • Agent adapted to dynamic environment: {'✅ Yes' if final_score > -500 else '❌ Struggled'}")
-        print(f"   • Risk Management: {'Excellent' if not agent_died else 'Failed - killed by moving Wumpus'}")
-    else:
-        print(f"   • No Wumpus movements occurred (game ended before 5 actions)")
+    grab_gold_status = 'Yes' if agent.has_gold else 'No'
+    shoot_arrow_status = 'Yes' if agent.shoot else 'No'
+    climb_out_status = 'Yes' if agent.has_gold and env.agent_x == 0 and env.agent_y == 0 else 'No'
+    die_status = 'Yes' if current_score <= -1000 else 'No'
+    adaptation_status = 'Yes' if current_score > -500 else 'Struggled'
+    risk_management = 'Excellent' if not agent_died else 'Failed - killed by moving Wumpus'
     
-    return final_score, step_count, agent.has_gold, (env.agent_x == 0 and env.agent_y == 0)
+    print(f"\n- Scoring:\n+ Grab Gold: +10 {grab_gold_status}\n+ Move Forward: -1 per move\n+ Turn Left/Right: -1 per turn\n+ Shoot Arrow: -10 {shoot_arrow_status}\n+ Climb Out (with gold): +1000 {climb_out_status}\n+ Die: -1000 {die_status}")
+    
+    if wumpus_movements > 0:
+        print(f"\nMOVING WUMPUS CHALLENGE ANALYSIS:\n+ Wumpus moved {wumpus_movements} times during the game\n+ Agent adapted to dynamic environment: {adaptation_status}\n+ Risk Management: {risk_management}")
+    else:
+        print(f"\nMOVING WUMPUS CHALLENGE ANALYSIS:\n+ No Wumpus movements occurred (game ended before 5 actions)")
+    
+    return current_score, step_count, agent.has_gold, (env.agent_x == 0 and env.agent_y == 0)
 
 if __name__ == "__main__":
     N, K, p, mode = get_user_configuration()
@@ -387,53 +300,46 @@ if __name__ == "__main__":
         print(f"Mode: Intelligent Agent")
         env = Environment(N=N, K=K, p=p) 
         agent = Agent(N)
-        final_score, steps, has_gold, climbed = run_autonomous_mode(env, agent, "Intelligent")
-        print(f"\n🎯 Intelligent Agent Performance Analysis:")
-        print(f"   • Efficiency: {len(agent.kb.visited)}/{env.N * env.N} cells explored")
-        print(f"   • Risk Management: {'Excellent' if final_score > 500 else 'Good' if final_score > 0 else 'Needs Improvement'}")
-        print(f"   • Planning Effectiveness: {'Optimal' if agent.has_gold else 'Suboptimal'}")
+        current_score, steps, has_gold, climbed = run_autonomous_mode(env, agent, "Intelligent")
+        efficiency_analysis = f"{len(agent.kb.visited)}/{env.N * env.N} cells explored"
+        risk_mgmt_analysis = 'Excellent' if current_score > 500 else 'Good' if current_score > 0 else 'Needs Improvement'
+        planning_effectiveness = 'Optimal' if agent.has_gold else 'Suboptimal'
+        
+        print(f"\nIntelligent Agent Performance Analysis:\nEfficiency: {efficiency_analysis}\nRisk Management: {risk_mgmt_analysis}\nPlanning Effectiveness: {planning_effectiveness}")
     elif mode == '2':
         print(f"Mode: Random Agent Baseline")
         env = Environment(N=N, K=K, p=p) 
         agent = RandomAgent(N)
-        final_score, steps, has_gold, climbed = run_autonomous_mode(env, agent, "Random")
-        print(f"\n🎲 Random Agent Performance Analysis:")
-        print(f"   • Efficiency: {len(agent.visited)}/{env.N * env.N} cells explored")
-        print(f"   • Risk Management: {'Poor - Random decisions' if final_score < 0 else 'Lucky!'}")
-        print(f"   • Planning Effectiveness: {'None - Pure randomness'}")
+        current_score, steps, has_gold, climbed = run_autonomous_mode(env, agent, "Random")
+        efficiency_analysis = f"{len(agent.visited)}/{env.N * env.N} cells explored"
+        risk_mgmt_analysis = 'Poor - Random decisions' if current_score < 0 else 'Lucky!'
+        
+        print(f"\nRandom Agent Performance Analysis:\nEfficiency: {efficiency_analysis}\nRisk Management: {risk_mgmt_analysis}\nPlanning Effectiveness: None - Pure randomness")
     elif mode == '3':
         print(f"Mode: Agent Comparison Experiment")
         num_trials = int(input("Enter number of trials per agent (default 5): ") or 5)
         run_comparison_experiment(N, K, p, num_trials)
     elif mode == '4':
         print(f"Mode: Moving Wumpus Mode")
-        agent_choice = input("Choose agent type (1=Adaptive Agent, 2=Standard Agent, 3=Random Agent, default Adaptive): ") or "1"
+        agent_choice = input("Choose agent type (1=Adaptive Agent, 2=Standard Agent, default Adaptive): ") or "1"
         
         if agent_choice == '1':
             env = MovingWumpusEnvironment(N=N, K=K, p=p)
             agent = AdaptiveAgent(N)
-            final_score, steps, has_gold, climbed = run_moving_wumpus_mode(env, agent, "Adaptive")
-            print(f"\n🧠 Adaptive Agent in Moving Wumpus Environment:")
-            print(f"   • Adaptability: {'Excellent' if final_score > 0 else 'Good' if final_score > -500 else 'Needs Improvement'}")
-            print(f"   • Dynamic Planning: {'Effective' if has_gold else 'Challenged by moving threats'}")
-            print(f"   • Survival: {'Success' if final_score > -1000 else 'Failed - killed by Wumpus'}")
-            print(f"   • Movement Adaptation: {agent.movement_phases} wumpus movement phases handled")
-            print(f"   • Knowledge Management: {'Effective' if len(agent.outdated_wumpus_knowledge) < 5 else 'Struggled with uncertainty'}")
+            current_score, steps, has_gold, climbed = run_moving_wumpus_mode(env, agent, "Adaptive")
+            adaptability_status = 'Excellent' if current_score > 0 else 'Good' if current_score > -500 else 'Needs Improvement'
+            dynamic_planning = 'Effective' if has_gold else 'Challenged by moving threats'
+            survival_status = 'Success' if current_score > -1000 else 'Failed - killed by Wumpus'
+            knowledge_mgmt = 'Effective' if len(agent.outdated_wumpus_knowledge) < 5 else 'Struggled with uncertainty'
+            
+            print(f"\nAdaptive Agent in Moving Wumpus Environment:\n+ Adaptability: {adaptability_status}\n+ Dynamic Planning: {dynamic_planning}\n+ Survival: {survival_status}\n+ Movement Adaptation: {agent.movement_phases} wumpus movement phases handled\n+ Knowledge Management: {knowledge_mgmt}")
         elif agent_choice == '2':
             env = MovingWumpusEnvironment(N=N, K=K, p=p)
             agent = Agent(N)
-            final_score, steps, has_gold, climbed = run_moving_wumpus_mode(env, agent, "Standard")
-            print(f"\n🤖 Standard Agent in Moving Wumpus Environment:")
-            print(f"   • Adaptability: {'Limited - no dynamic knowledge management'}")
-            print(f"   • Dynamic Planning: {'Basic - may struggle with moving threats'}")
-            print(f"   • Survival: {'Success' if final_score > -1000 else 'Failed - killed by Wumpus'}")
-        elif agent_choice == '3':
-            env = MovingWumpusEnvironment(N=N, K=K, p=p)
-            agent = RandomAgent(N)
-            final_score, steps, has_gold, climbed = run_moving_wumpus_mode(env, agent, "Random")
-            print(f"\n🎲 Random Agent in Moving Wumpus Environment:")
-            print(f"   • Survival Rate: {'Lucky' if final_score > -1000 else 'Expected failure against moving threats'}")
-            print(f"   • Adaptation: {'None - Pure randomness vs dynamic environment'}")
+            current_score, steps, has_gold, climbed = run_moving_wumpus_mode(env, agent, "Standard")
+            survival_status = 'Success' if current_score > -1000 else 'Failed - killed by Wumpus'
+            
+            print(f"\nStandard Agent in Moving Wumpus Environment:\n+ Adaptability: Limited - no dynamic knowledge management\n+ Dynamic Planning: Basic - may struggle with moving threats\n+ Survival: {survival_status}")
         else:
             print("Invalid agent choice.")
     else:
