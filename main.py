@@ -107,8 +107,23 @@ def run_comparison_experiment(N, K, p, num_trials=10):
         print(f"\nTrial {trial + 1}/{num_trials}")
         print("-" * 40)
         
+        # Create one environment that both agents will face
+        shared_env_config = Environment(N=N, K=K, p=p)
+        
+        # Count pits and wumpuses for display
+        pit_count = sum(1 for y in range(N) for x in range(N) if shared_env_config.grid[y][x].pit)
+        wumpus_count = sum(1 for y in range(N) for x in range(N) if shared_env_config.grid[y][x].wumpus)
+        print(f"Generated shared environment: {pit_count} pits, {wumpus_count} wumpuses")
+        
         print(f"Testing Intelligent Agent...")
         env_intelligent = Environment(N=N, K=K, p=p)
+        # Copy the grid state from shared environment
+        for y in range(N):
+            for x in range(N):
+                env_intelligent.grid[y][x].pit = shared_env_config.grid[y][x].pit
+                env_intelligent.grid[y][x].wumpus = shared_env_config.grid[y][x].wumpus
+                env_intelligent.grid[y][x].gold = shared_env_config.grid[y][x].gold
+        
         agent_intelligent = Agent(N, K)
         score_i, steps_i, has_gold_i, climbed_i = run_autonomous_mode(env_intelligent, agent_intelligent, "Intelligent")
         intelligent_results.append({
@@ -121,8 +136,15 @@ def run_comparison_experiment(N, K, p, num_trials=10):
         
         print(f"\n" + "-" * 40)
         
-        print(f"Testing Random Agent...")
+        print(f"Testing Random Agent on SAME environment...")
         env_random = Environment(N=N, K=K, p=p)
+        # Copy the same grid state to random agent environment
+        for y in range(N):
+            for x in range(N):
+                env_random.grid[y][x].pit = shared_env_config.grid[y][x].pit
+                env_random.grid[y][x].wumpus = shared_env_config.grid[y][x].wumpus
+                env_random.grid[y][x].gold = shared_env_config.grid[y][x].gold
+        
         agent_random = RandomAgent(N, K)
         score_r, steps_r, has_gold_r, climbed_r = run_autonomous_mode(env_random, agent_random, "Random")
         random_results.append({
