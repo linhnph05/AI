@@ -153,11 +153,22 @@ def run_comparison_experiment(N, K, p, num_trials=10):
     survival_improvement = i_survival_rate - r_survival_rate
     efficiency_ratio = r_avg_steps / i_avg_steps
     
-    print(f"\n-Intelligent agent:\n+ Average Score: {i_avg_score:.1f}\n+ Best Score: {max(i_scores)}\n+ Worst Score: {min(i_scores)}\n+ Average Steps: {i_avg_steps:.1f}\n+ Success Rate: {i_success_rate:.1f}% (found gold + escaped)\n+ Survival Rate: {i_survival_rate:.1f}% (didn't die)\n+ Gold Finding Rate: {i_gold_rate:.1f}%")
+    i_decision_efficiency = (i_success_rate/100 * 0.4) + (i_survival_rate/100 * 0.3) + (min(i_avg_score/1000, 1) * 0.2) + (min(1000/i_avg_steps, 1) * 0.1)
+    r_decision_efficiency = (r_success_rate/100 * 0.4) + (r_survival_rate/100 * 0.3) + (min(r_avg_score/1000, 1) * 0.2) + (min(1000/r_avg_steps, 1) * 0.1)
     
-    print(f"\n-Random agent:\n+ Average Score: {r_avg_score:.1f}\n+ Best Score: {max(r_scores)}\n+ Worst Score: {min(r_scores)}\n+ Average Steps: {r_avg_steps:.1f}\n+ Success Rate: {r_success_rate:.1f}% (found gold + escaped)\n+ Survival Rate: {r_survival_rate:.1f}% (didn't die)\n+ Gold Finding Rate: {r_gold_rate:.1f}%")
+    print(f"\n-Intelligent agent:\n+ Average Score: {i_avg_score:.1f}\n+ Best Score: {max(i_scores)}\n+ Worst Score: {min(i_scores)}\n+ Average Steps: {i_avg_steps:.1f}\n+ Success Rate: {i_success_rate:.1f}% (found gold + escaped)\n+ Survival Rate: {i_survival_rate:.1f}% (didn't die)\n+ Gold Finding Rate: {i_gold_rate:.1f}%\n+ Decision Efficiency: {i_decision_efficiency:.3f}")
     
-    print(f"\n- Comparison:\n+ Score Improvement: {score_improvement:+.1f} points\n+ Success Rate Improvement: {success_improvement:+.1f}%\n+ Survival Rate Improvement: {survival_improvement:+.1f}%\n+ Efficiency: Intelligent agent is {efficiency_ratio:.1f}x more efficient")
+    print(f"\n-Random agent:\n+ Average Score: {r_avg_score:.1f}\n+ Best Score: {max(r_scores)}\n+ Worst Score: {min(r_scores)}\n+ Average Steps: {r_avg_steps:.1f}\n+ Success Rate: {r_success_rate:.1f}% (found gold + escaped)\n+ Survival Rate: {r_survival_rate:.1f}% (didn't die)\n+ Gold Finding Rate: {r_gold_rate:.1f}%\n+ Decision Efficiency: {r_decision_efficiency:.3f}")
+    
+    print(f"\n- Comparison:\n+ Score Improvement: {score_improvement:+.1f} points\n+ Success Rate Improvement: {success_improvement:+.1f}%\n+ Survival Rate Improvement: {survival_improvement:+.1f}%\n+ Efficiency: Intelligent agent is {efficiency_ratio:.1f}x more efficient\n+ Decision Efficiency Improvement: {i_decision_efficiency - r_decision_efficiency:+.3f}")
+    
+    print(f"\nDECISION EFFICIENCY FORMULA:")
+    print(f"DE = (Success_Rate * 0.4) + (Survival_Rate * 0.3) + (Score_Factor * 0.2) + (Speed_Factor * 0.1)")
+    print(f"Where:")
+    print(f"+ Success_Rate: Percentage of missions completed successfully (0-1)")
+    print(f"+ Survival_Rate: Percentage of games where agent didn't die (0-1)")
+    print(f"+ Score_Factor: min(Average_Score/1000, 1) - normalized score performance")
+    print(f"+ Speed_Factor: min(1000/Average_Steps, 1) - rewards efficiency")
     
     return intelligent_results, random_results
 
